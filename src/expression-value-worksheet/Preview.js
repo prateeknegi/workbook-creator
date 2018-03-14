@@ -54,7 +54,6 @@ export default class Preview extends React.Component {
         return (
             <div>
                 <Subheader>Preview</Subheader>
-                <Divider/>
                 {
                     this.props.results.map(
                     (result, index) => {

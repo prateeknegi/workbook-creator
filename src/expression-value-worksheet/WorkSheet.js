@@ -2,8 +2,20 @@ import React from 'react';
 import Selector from './Selector'
 import Preview from "./Preview";
 import provider from './Provider';
+import Divider from 'material-ui/Divider';
+import Subheader from 'material-ui/Subheader';
+
+const styles = {
+    content: {
+            display: 'flex',
+            flexWrap: 'wrap',
+            flexDirection: 'row',
+            justifyContent: 'flex-start'
+    }
+};
 
 export default class ExpressionValueWorkSheet extends React.Component {
+
     constructor(props) {
         super(props);
         this.addExpression = this.addExpression.bind(this);
@@ -20,8 +32,12 @@ export default class ExpressionValueWorkSheet extends React.Component {
 
     render() {
         return (<div>
-            <Selector addExpression={this.addExpression} provider={provider}/>
-            <Preview results={this.state.selectedExpressions}/>
+            <Subheader>Provide Value of Expression WorkSheet Generator</Subheader>
+            <Divider/>
+            <div style={styles.content}>
+                <Selector addExpression={this.addExpression} provider={provider}/>
+                <Preview results={this.state.selectedExpressions}/>
+            </div>
         </div>);
     }
 }
